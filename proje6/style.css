@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #f8f9fb, #eef1f5);
+    color: #111;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 28px;
+  }
+  
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .menu-icon {
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 280px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  .step:hover {
+    transform: translateY(-10px);
+  }
+  
+  .step i {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .step .number {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .step h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .step p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .dots {
+    margin-top: 40px;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 6px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+  
+  .dot.active {
+    background: #333;
+  }
+  
+  /* === Yan Menü === */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding: 60px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .side-menu a {
+    display: block;
+    margin-bottom: 20px;
+    color: #111;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .side-menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #111;
+  }
+  
+  /* Menü checkbox kontrolü */
+  #menu-toggle:checked ~ .side-menu {
+    right: 0;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
+  

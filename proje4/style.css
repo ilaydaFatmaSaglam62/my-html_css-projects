@@ -1,0 +1,292 @@
+/* Genel Sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8FAFC;
+    color: #111827;
+    line-height: 1.6;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  /* Header */
+  header {
+    background-color: #FFFFFF;
+    padding: 20px 0;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #111827;
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    color: #3B82F6;
+    transition: 0.3s;
+  }
+  
+  /* Hero Section */
+/* Hero Section */
+.hero {
+    text-align: center; /* Bu kısmı kaldırabiliriz, flexbox ile hizalayacağız */
+    padding: 120px 0;
+    background-color: #ffffff;
+  }
+  
+  .hero-content {
+    display: flex; /* İçerikleri yan yana hizala */
+    align-items: center; /* Dikeyde ortala */
+    justify-content: space-between; /* Metin ve medya arasında boşluk bırak */
+    flex-wrap: wrap; /* Küçük ekranlarda alt alta geçmelerini sağla */
+    text-align: left; /* Metni sola hizala */
+  }
+  
+  .hero-text {
+    flex: 1; /* Mevcut alanı doldurmasını sağla */
+    min-width: 300px; /* Minimum genişlik */
+    padding-right: 40px; /* Görselden biraz boşluk bırak */
+  }
+  
+  .hero-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .hero-text p {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 16px;
+    max-width: none; /* Önceki "max-width: 600px; margin: 0 auto 16px;" ayarını geçersiz kıl */
+  }
+  
+  .hero-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-media {
+    flex: 1; /* Mevcut alanı doldurmasını sağla */
+    min-width: 300px; /* Minimum genişlik */
+  }
+  
+  .hero-media img,
+  .hero-media video {
+    width: 100%;
+    border-radius: 12px;
+    height: auto; /* Resmin oranını koru */
+    display: block; /* Gereksiz boşlukları engelle */
+  }
+  
+  .cta-button {
+    background-color: #3B82F6;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #2563EB;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 120px 0;
+    background-color: #F8FAFC;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .all-features {
+    display: grid;
+    gap: 32px;
+  }
+  
+  .feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .feature {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 280px;
+    text-align: left;
+    transition: 0.3s ease;
+  }
+  
+  .feature:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature i {
+    font-size: 32px;
+    background-color: #E5E7EB;
+    padding: 16px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  
+  .feature-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .feature-info p {
+    font-size: 14px;
+    color: #6B7280;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 120px 0;
+    background-color: #FFFFFF;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    color: #6B7280;
+  }
+  
+  .about-media {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-media img,
+  .about-media video {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 120px 0;
+    background-color: #F8FAFC;
+    text-align: center;
+  }
+  
+  .services h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+  
+  .service-card {
+    background-color: #FFFFFF;
+    padding: 24px;
+    border-radius: 16px;
+    width: 280px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+  }
+  
+  .service-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .service-card p {
+    font-size: 14px;
+    color: #6B7280;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #FFFFFF;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #E5E7EB;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #6B7280;
+  }
+  
+  footer a {
+    color: #3B82F6;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,281 @@
+/* Genel Stil Sıfırlamaları ve Temel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #F9F3EF;
+    color: #1B3C53;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* İçeriğin çok yayılmasını engeller */
+    margin: 0 auto; /* Sayfayı yatayda ortalar */
+    padding: 20px; /* Genel iç boşluk */
+}
+
+/* --- Header Stilleri (Mevcut haliyle bırakıyorum, istediğin gibiydi) --- */
+header {
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+                      url(img/view.jpg);
+    background-size: cover;
+    background-position: center;
+
+    display: flex; /* Header'ı bir flex konteyneri yap */
+    justify-content: center; /* Yatayda ortala */
+    align-items: center; /* Dikeyde ortala */
+    flex-direction: column; /* Öğeleri alt alta sırala (h1, p, a) */
+    text-align: center; /* İçindeki metinleri de ortala */
+}
+
+header h1,
+header p {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #FFB433;
+    color: #FBF8EF;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c5800a;
+    cursor: pointer;
+}
+
+/* --- "Popular Destinations" Başlığı --- */
+.destinations h2 {
+    text-align: center; /* Başlığı ortaya hizalar */
+    margin-top: 50px; /* Üstten boşluk bırakır */
+    margin-bottom: 40px; /* Alttan boşluk bırakır */
+    font-size: 2.8em; /* Başlık boyutu */
+    color: #1B3C53; /* Temel metin rengine yakın bir renk */
+}
+
+/* --- Tüm Destinasyon Kartlarını Kapsayan Flex Konteyneri --- */
+.all-destinations {
+    display: flex; /* İçindeki kartları yan yana dizer */
+    flex-wrap: wrap; /* Ekran küçüldüğünde alt alta geçmelerini sağlar */
+    justify-content: center; /* Kartları yatayda ortalar */
+    gap: 30px; /* Kartlar arasına boşluk bırakır */
+    padding-bottom: 50px; /* Alt kısımdan boşluk bırakır */
+}
+
+/* --- Her Bir Destinasyon Kartı (Yeni adıyla: .destination-card) --- */
+.destination-card {
+    background-color: #fff; /* Kartın arka plan rengi */
+    border-radius: 15px; /* Kartın dış köşeleri */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    overflow: hidden; /* İçerik taşmasını engeller, özellikle resim için */
+    width: 300px; /* Kartın sabit genişliği */
+    /* Resim ve metinlerin alt alta gelmesi için kartın kendisi Flex konteyner olmalı */
+    display: flex;
+    flex-direction: column; /* İçeriği (resim ve bilgi) alt alta sıralar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover efekti için yumuşak geçiş */
+}
+
+/* --- Resim Alanı --- */
+.destination-media {
+    width: 100%;
+    height: 200px; /* Resmin gösterileceği alanın yüksekliği (kareye yakın) */
+    /* Resmin hafif oval kare olmasını bu alandan sağlayacağız */
+    border-radius: 15px 15px 0 0; /* Sadece üst köşeleri yuvarlatır */
+    overflow: hidden; /* Resmin köşelerinin yuvarlak görünmesi için taşmayı gizler */
+}
+
+.destination-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmin orantısını bozmadan alanı doldurur */
+    display: block; /* Gereksiz boşlukları engeller */
+}
+
+/* --- Destinasyon Bilgi Alanı (Başlık ve Açıklama) --- */
+.destination-info {
+    padding: 20px; /* İç boşluklar */
+    text-align: center; /* Metinleri ortaya hizalar */
+    flex-grow: 1; /* Kartın alt kısmını doldurmak için esnemesini sağlar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Başlık ve p'yi kendi içinde ortalar */
+}
+
+.destination-info h3 { /* h2 yerine h3 kullandık */
+    font-size: 1.6em; /* Şehir adının boyutu */
+    margin-bottom: 8px; /* Başlık ile açıklama arasındaki boşluk */
+    color: #1B3C53; /* Ana metin rengi */
+}
+
+.destination-info p {
+    font-size: 0.95em; /* Açıklama metninin boyutu */
+    color: #666; /* Açıklama metninin daha açık rengi */
+    line-height: 1.5;
+}
+
+/* --- Hover Efekti --- */
+.destination-card:hover { /* destination-container yerine destination-card */
+    transform: translateY(-8px); /* Fare üzerine gelince biraz daha yukarı kalkar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); /* Gölge daha belirginleşir */
+}
+
+/* --- Medya Sorgusu: Küçük Ekranlarda Daha İyi Görünüm --- */
+@media (max-width: 768px) {
+    .destinations h2 {
+        font-size: 2em;
+    }
+
+    .all-destinations {
+        gap: 20px; /* Küçük ekranlarda boşluğu azalt */
+    }
+
+    .destination-card {
+        width: 90%; /* Küçük ekranlarda kartlar daha geniş yer kaplar */
+        max-width: 350px; /* Maksimum genişlik sınırı */
+    }
+
+    .destination-media {
+        height: 180px; /* Küçük ekranlarda resim yüksekliğini ayarla */
+    }
+
+    .destination-info h3 {
+        font-size: 1.4em;
+    }
+
+    .destination-info p {
+        font-size: 0.9em;
+    }
+}
+
+/* --- "Why Wanderlusts?" Başlığı --- */
+.wanderlusts h2 {
+    text-align: center; /* Başlığı ortaya hizalar */
+    margin-top: 60px; /* Üstten daha fazla boşluk bırakır */
+    margin-bottom: 50px; /* Alttan daha fazla boşluk bırakır */
+    font-size: 2.8em; /* Başlık boyutu */
+    color: #1B3C53; /* Temel metin rengine yakın bir renk */
+}
+
+/* --- Tüm Wanderlusts Öğelerini Kapsayan Flex Konteyneri --- */
+.all-wanderlusts {
+    display: flex; /* İçindeki öğeleri (wanderlust-container) yan yana dizer */
+    flex-wrap: wrap; /* Ekran küçüldüğünde alt alta geçmelerini sağlar */
+    justify-content: center; /* Öğeleri yatayda ortalar */
+    gap: 40px; /* Öğeler arasına daha fazla boşluk bırakır */
+    padding-bottom: 60px; /* Alt kısımdan boşluk bırakır */
+}
+
+/* --- Her bir Wanderlust Öğesinin Kapsayıcısı --- */
+.wanderlust-container {
+    background-color: #fff; /* Kartın arka plan rengi */
+    border-radius: 15px; /* Köşeleri yuvarlatılmış */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Hafif gölge */
+    padding: 30px; /* İç boşluklar */
+    width: 300px; /* Sabit genişlik */
+    text-align: center; /* İçindeki metinleri ve ikonu ortalar */
+    display: flex; /* İçeriği (ikon ve bilgi) alt alta sıralamak için */
+    flex-direction: column;
+    align-items: center; /* Yatayda ortalar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover efekti için geçiş */
+}
+
+/* --- Wanderlust İkonu --- */
+.wanderlust-container i {
+    font-size: 3.5em; /* İkon boyutu */
+    color: #1B3C53; /* İkon rengi (CTA butonu rengiyle uyumlu) */
+    margin-bottom: 0px; /* İkonun altındaki boşluk */
+}
+
+/* --- Wanderlust Bilgi Alanı (Başlık ve Açıklama) --- */
+.wanderlust-info {
+    flex-grow: 1; /* Kalan dikey alanı doldurur */
+}
+
+.wanderlust-info h2 { /* HTML'de h2 kullanmışsın, o yüzden burası h2 */
+    font-size: 1.5em; /* Başlık boyutu */
+    margin-top: 0;  /* YENİ EKLENECEK KOD: h2'nin üstündeki varsayılan boşluğu kaldırır */
+    margin-bottom: 10px; /* Başlık ile açıklama arası boşluk */
+    color: #1B3C53; /* Ana metin rengi */
+    text-shadow: none; /* Üstteki h2 stilinden gelen text-shadow'u sıfırlıyoruz */
+}
+
+.wanderlust-info p {
+    font-size: 0.9em; /* Açıklama metni boyutu */
+    color: #666; /* Açıklama metni rengi */
+    line-height: 1.6;
+}
+
+/* --- Wanderlust Hover Efekti --- */
+.wanderlust-container:hover {
+    transform: translateY(-8px); /* Fare üzerine gelince yukarı kalkar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Gölge belirginleşir */
+}
+
+/* --- Footer Stilleri --- */
+footer {
+    background-color: #1B3C53; /* Koyu arka plan */
+    color: #F9F3EF; /* Açık metin rengi */
+    padding: 25px 0; /* İç boşluk */
+    text-align: center; /* Metni ortaya hizalar */
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 0; /* Varsayılan p marginini sıfırla */
+}
+
+footer a {
+    color: #F9F3EF; /* Bağlantı rengi (CTA butonu rengiyle uyumlu) */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Fare üzerine gelince alt çizgi belirir */
+}
+
+/* --- Medya Sorgusu: Küçük Ekranlarda Daha İyi Görünüm (Wanderlusts için eklemeler) --- */
+@media (max-width: 768px) {
+    /* Mevcut .destinations ve .destination-card medya sorgusu stillerini koru */
+    /* ... */
+
+    .wanderlusts h2 {
+        font-size: 2em;
+    }
+
+    .all-wanderlusts {
+        gap: 25px; /* Küçük ekranlarda boşluğu azalt */
+    }
+
+    .wanderlust-container {
+        width: 90%; /* Küçük ekranlarda kartlar daha geniş yer kaplar */
+        max-width: 350px; /* Maksimum genişlik sınırı */
+        padding: 25px;
+    }
+
+    .wanderlust-container i {
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+
+    .wanderlust-info h2 {
+        font-size: 1.4em;
+    }
+
+    .wanderlust-info p {
+        font-size: 0.85em;
+    }
+}

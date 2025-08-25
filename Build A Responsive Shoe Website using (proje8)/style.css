@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&family=Coiny&family=Londrina+Outline&family=Oi&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400..900&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Swanky+and+Moo+Moo&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Old Standard TT', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+nav .wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 60px 0;
+    z-index: 1000;
+}
+
+nav .nav-container .logo {
+    width: 60px;
+    height: auto;
+}
+
+nav .nav-container .search {
+    width: 320px;
+    height: 5vh;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(128, 128, 128, 0.2);
+    background: linear-gradient(to right, #000, #1a1a1a);
+}
+
+nav .nav-container .search input {
+    width: 86%;
+    padding-left: 15px;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+}
+
+nav .nav-container .search i {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.landingpage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.landingpage .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1;
+    position: relative;
+}
+
+.landingpage .content .text {
+    max-width: 40%;
+    color: #000;
+}
+
+.landingpage .content .text h3 {
+    color: #ff0000;
+    font-size: 1.6rem;
+}
+
+.landingpage .content .text h1 {
+    font-size: 4.5rem;
+    line-height: 1.2;
+}
+
+.landingpage .content .text p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.landingpage .content .text button {
+    width: 220px;
+    height: 50px;
+    margin: 20px 0;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.landingpage .content .text button:hover {
+    scale: 1.05;
+}
+
+.landingpage .content .image {
+    max-width: 40%;
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    overflow: hidden;
+    z-index: 2; /* Resmi önde tutmak için */
+}
+
+.landingpage .content .image img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.wave-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #000;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 70% 100%, 0% 100%); /* Sola kıvrımlı dalga */
+    z-index: 1; /* Resmin arkasında kalsın */
+}
